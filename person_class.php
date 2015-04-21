@@ -2,8 +2,6 @@
 
 /*
 /*Класс для валидации данных специально для оформления рассрочки в УкрСибБанке
-
-
 /* author: a.shraer@gmail.com
 */
 
@@ -182,7 +180,6 @@ class customerPerson{
 
 
     public function is_all_data_valid(){
-//    echo 'validating inn';
         $this->result = array (
           'surname'    =>  $this->is_str_valid($this->surname),
           'first_name' =>  $this->is_str_valid($this->first_name),
@@ -200,10 +197,6 @@ class customerPerson{
     }
      return !$check;
     }
-
-    //private function 
-
-
 
 }
 
