@@ -2,9 +2,9 @@
 
 // Test of validation specially for UkrSibBank
 
-include_once("person_class.php");
+include_once("ValidateCustomer.php");
 
-$customer = new customerPerson(
+$customer = new validateCustomer(
     "Петров",
     "Петр",
     "Миколаевич",

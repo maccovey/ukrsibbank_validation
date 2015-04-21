@@ -15,7 +15,7 @@ function console_log($msg){
      }
 }
 
-class customerPerson{
+class validateCustomer{
 
     var $surname      = '';
     var $first_name   = '';
