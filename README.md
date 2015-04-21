@@ -11,7 +11,7 @@
 
 
 Пример кода
-
+```php
 <?php
 
 include_once("ValidateCustomer.php");
@@ -33,3 +33,4 @@ else {echo "OK".PHP_EOL;
   print_r($customer->result);
 };
 ?>
+```
