@@ -96,9 +96,6 @@ class customerPerson{
        if ($parsed_inn["valid"]) {
            console_log("inn valid");
 
-      //     var_dump(DateTime::createFromFormat('Y-m-d',$parsed_inn["year"].'-'.$parsed_inn["month"].'-'.$parsed_inn["day"]));
-      //     DateTime::createFromFormat('Y-m-d', $this->birthday);
-
            if (DateTime::createFromFormat('Y-m-d',$parsed_inn["year"].'-'.$parsed_inn["month"].'-'.$parsed_inn["day"])
                == DateTime::createFromFormat('Y-m-d', $this->birthday)) {
 
