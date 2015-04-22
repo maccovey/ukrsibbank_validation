@@ -30,6 +30,8 @@ class validateCustomer{
 
     var $result       = '';
 
+    var $bitmask      = '';
+
     public function __construct(
                 $surname,
 				$first_name,
@@ -46,6 +48,7 @@ class validateCustomer{
         $this->patronymic   = $patronymic;
         $this->birthday     = $birthday;
         $this->inn     	    = $inn;
+        $this->passport_id  = $passport_id;
         $this->mobile_phone = $mobile_phone;
         $this->email        = $email;
     }
@@ -134,8 +137,12 @@ class validateCustomer{
 
 
     private function is_passport_id_valid(){
-
+        if (!empty($this->passport_id)) {
         return true;
+        }
+        else {
+            return false;
+        }
     }
 
     private function is_mobile_phone_valid(){
@@ -179,6 +186,25 @@ class validateCustomer{
     }
 
 
+    public function is_empty_data(){
+
+       if (empty($this->surname) &&
+           empty($this->first_name) &&
+           empty($this->patronymic) &&
+           empty($this->birthday) &&
+           empty($this->inn) &&
+           empty($this->passport_id) &&
+           empty($this->mobile_phone) &&
+           empty($this->email))
+       {
+           return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
     public function is_all_data_valid(){
         $this->result = array (
           'surname'    =>  $this->is_str_valid($this->surname),
@@ -195,6 +221,7 @@ class validateCustomer{
     foreach($this->result as $row) {
         $check |= !$row;
     }
+     $this->bitmask = !$check;
      return !$check;
     }
 
